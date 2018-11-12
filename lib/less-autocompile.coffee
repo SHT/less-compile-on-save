@@ -8,10 +8,10 @@ module.exports = LessAutocompile =
       title: 'Success Notifications'
       description: 'Toggle notifications for when the compilation succeeds.'
       type: 'boolean'
-      default: false
+      default: true
     notif2:
       title: 'Syntax Error Notifications'
-      description: 'Toggle notifications for when the compilation fails due to a syntax error. Other error notifications appear by default.'
+      description: 'Toggle notifications for when the compilation fails due to a syntax error. Other error notifications show up by default.'
       type: 'boolean'
       default: true
 
