@@ -55,11 +55,11 @@ class LessAutocompileView
         atom.notifications.addError err,
           dismissable: true
       else
-        if results.map != null
-          atom.notifications.addSuccess "Files created",
+        if results.map != null && atom.config.get('less-compile-on-save.notif1')
+          atom.notifications.addSuccess "Compilation Successful. Source map generated.",
             detail: "#{results.css}\n#{results.map}"
-        else
-          atom.notifications.addSuccess "File created",
+        else if atom.config.get('less-compile-on-save.notif1')
+          atom.notifications.addSuccess "Compilation Successful.",
             detail: results.css
 
   writeFile: (contentFile, newPath, newFile, callback) ->
@@ -112,7 +112,7 @@ class LessAutocompileView
 
         @writeFiles output, newPath, newFile
     , (err) ->
-      if err
+      if err && atom.config.get('less-compile-on-save.notif2')
         atom.notifications.addError err.message,
           detail: "#{err.filename}:#{err.line}"
           dismissable: true
