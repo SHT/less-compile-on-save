@@ -1,7 +1,7 @@
 {
   "name": "less-compile-on-save",
   "main": "./lib/less-autocompile",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Automatically compile LESS files on save",
   "repository": "https://github.com/ShtHappens796/less-compile-on-save",
   "license": "MIT",
