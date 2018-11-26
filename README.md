@@ -1,5 +1,7 @@
 # less-compile-on-save
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a0cf6f3a879a45b68e439a3191a8a7d2)](https://app.codacy.com/app/ShtHappens796/less-compile-on-save?utm_source=github.com&utm_medium=referral&utm_content=ShtHappens796/less-compile-on-save&utm_campaign=Badge_Grade_Dashboard)
+
 Automatically compile LESS files on save.
 <br>
 Waits for the save to complete and then compiles the LESS file with the given options into the specified output.
