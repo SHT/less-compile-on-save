@@ -7,7 +7,7 @@ Waits for the save to complete and then compiles the LESS file with the given op
 ---
 
 The following parameters can be set:
-```
+```markdown
 out          (string) path of CSS file to create
 sourcemap    (bool)   create sourcemap file
 compress     (bool)   compress CSS file
@@ -19,8 +19,6 @@ Add the parameters on the first line of the LESS file.
 Check [this](https://github.com/browserslist/browserslist#best-practices) for a how-to on autoprefixer parameters.
 
 ---
-
-
 
 ## Example
 /less/style.less
