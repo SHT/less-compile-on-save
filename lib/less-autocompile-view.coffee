@@ -13,16 +13,17 @@ class LessAutocompileView
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.workspace.observeTextEditors((editor) =>
       filePath = editor.getURI()
-      fileExt = path.extname filePath
-      if fileExt is '.less'
-        editorSubscriptions = new CompositeDisposable
-        editorSubscriptions.add editor.onDidSave( =>
-          @handleSave filePath
-        )
-        editorSubscriptions.add editor.onDidDestroy( =>
-          editorSubscriptions.dispose()
-          @subscriptions.remove editorSubscriptions
-        )
+      if filePath
+        fileExt = path.extname filePath
+        if fileExt is '.less'
+          editorSubscriptions = new CompositeDisposable
+          editorSubscriptions.add editor.onDidSave( =>
+            @handleSave filePath
+          )
+          editorSubscriptions.add editor.onDidDestroy( =>
+            editorSubscriptions.dispose()
+            @subscriptions.remove editorSubscriptions
+          )
         @subscriptions.add editorSubscriptions
     )
 
