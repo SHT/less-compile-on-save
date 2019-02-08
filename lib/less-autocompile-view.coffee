@@ -15,15 +15,17 @@ class LessAutocompileView
       filePath = editor.getURI()
       if filePath
         fileExt = path.extname filePath
-        if fileExt is '.less'
-          editorSubscriptions = new CompositeDisposable
-          editorSubscriptions.add editor.onDidSave( =>
-            @handleSave filePath
-          )
-          editorSubscriptions.add editor.onDidDestroy( =>
-            editorSubscriptions.dispose()
-            @subscriptions.remove editorSubscriptions
-          )
+      else
+        fileExt = ''
+      if fileExt is '.less'
+        editorSubscriptions = new CompositeDisposable
+        editorSubscriptions.add editor.onDidSave( =>
+          @handleSave filePath
+        )
+        editorSubscriptions.add editor.onDidDestroy( =>
+          editorSubscriptions.dispose()
+          @subscriptions.remove editorSubscriptions
+        )
         @subscriptions.add editorSubscriptions
     )
 
